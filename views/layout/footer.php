@@ -1,5 +1,5 @@
     </main>
-    <footer class="">
+    <footer class="main-footer">
         <div class="container">
             <p>Laboratório de Programação 3 - <?= date('Y') ?></p>
         </div>

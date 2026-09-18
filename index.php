@@ -27,8 +27,9 @@ $rotas = [
     '/'               => ['controller' => 'HomeController',    'metodo' => 'index'], 
     '/empresa'               => ['controller' => 'HomeController',    'metodo' => 'sobre'],
         '/usuarios'               => ['controller' => 'UsuarioController',    'metodo' => 'index'],
-
+'/usuarios/adicionar'               => ['controller' => 'UsuarioController',    'metodo' => 'adicionar'],
 ];
+
 
 // Verificação de existência da rota
 if (array_key_exists($uri, $rotas)) {
