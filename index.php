@@ -24,12 +24,29 @@ if (empty($uri)) {
 
 // Tabela de Roteamento (Mapeamento de Rotas)
 $rotas = [
-    '/'               => ['controller' => 'HomeController',    'metodo' => 'index'], 
-    '/empresa'               => ['controller' => 'HomeController',    'metodo' => 'sobre'],
-        '/usuarios'               => ['controller' => 'UsuarioController',    'metodo' => 'index'],
-'/usuarios/adicionar'               => ['controller' => 'UsuarioController',    'metodo' => 'adicionar'],
+    '/'                 => ['controller' => 'HomeController',    'metodo' => 'index'],
+    '/empresa'          => ['controller' => 'HomeController',    'metodo' => 'sobre'],
+    '/usuarios'         => ['controller' => 'UsuarioController',    'metodo' => 'index'],
+    '/usuarios/adicionar' => ['controller' => 'UsuarioController',    'metodo' => 'adicionar'],
+    '/usuarios/editar' => ['controller' => 'UsuarioController',    'metodo' => 'editar'],
+    '/usuarios/excluir' => ['controller' => 'UsuarioController',    'metodo' => 'excluir'],
+    '/categorias'         => ['controller' => 'CategoriaController',    'metodo' => 'index'],
+    '/categorias/adicionar' => ['controller' => 'CategoriaController',    'metodo' => 'adicionar'],
+    '/categorias/editar' => ['controller' => 'CategoriaController',    'metodo' => 'editar'],
+    '/categorias/excluir' => ['controller' => 'CategoriaController',    'metodo' => 'excluir'],
+    '/produtos'         => ['controller' => 'ProdutoController',    'metodo' => 'index'],
+    '/produtos/adicionar' => ['controller' => 'ProdutoController',    'metodo' => 'adicionar'],
+    '/produtos/editar' => ['controller' => 'ProdutoController',    'metodo' => 'editar'],
+    '/produtos/excluir' => ['controller' => 'ProdutoController',    'metodo' => 'excluir'],
+    '/clientes'         => ['controller' => 'ClienteController',    'metodo' => 'index'],
+    '/clientes/adicionar' => ['controller' => 'ClienteController',    'metodo' => 'adicionar'],
+    '/clientes/editar' => ['controller' => 'ClienteController',    'metodo' => 'editar'],
+    '/clientes/excluir' => ['controller' => 'ClienteController',    'metodo' => 'excluir'],
+    '/filmes'         => ['controller' => 'FilmeController',    'metodo' => 'index'],
+    '/filmes/adicionar' => ['controller' => 'FilmeController',    'metodo' => 'adicionar'],
+    '/filmes/editar' => ['controller' => 'FilmeController',    'metodo' => 'editar'],
+    '/filmes/excluir' => ['controller' => 'FilmeController',    'metodo' => 'excluir'],
 ];
-
 
 // Verificação de existência da rota
 if (array_key_exists($uri, $rotas)) {
