@@ -5,8 +5,8 @@
 
     <div class="content-panel">
         <div class="header-action">
-            <h3>Clientes Cadastrados</h3>
-            <a href="/lp3_projeto/clientes/adicionar" class="btn btn-success btn-sm">+ Novo Cliente</a>
+            <h3>Filmes Cadastrados</h3>
+            <a href="/lp3_projeto/filmes/adicionar" class="btn btn-success btn-sm">+ Novo Filme</a>
         </div>
 
         <table class="table table-striped">
@@ -14,31 +14,25 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Email</th>
-                    <th>CPF</th>
-                    <th>Salário</th>
-                    <th>Sexo</th>
-                    <th>Data</th>
-                    <th>Observações</th>
+                    <th>Diretor</th>
+                    <th>Duração</th>
+                    <th>Imagem</th>
                     <th class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($clientes)): ?>
-                    <?php foreach ($clientes as $linha): ?>
+                <?php if (!empty($filmes)): ?>
+                    <?php foreach ($filmes as $linha): ?>
                         <tr>
                             <td><?= $linha['id'] ?></td>
-                            <td><?= htmlspecialchars($linha['nome']) ?></td>
-                            <td><?= htmlspecialchars($linha['email']) ?></td>
-                            <td><?= htmlspecialchars($linha['cpf']) ?></td>
-                            <td><?= number_format($linha['salario'], 2, ',', '.') ?></td>
-                            <td><?= htmlspecialchars($linha['sexo']) ?></td>
-                            <td><?= htmlspecialchars($linha['data']) ?></td>
-                            <td><?= htmlspecialchars($linha['obs']) ?></td>
+                            <td><?= htmlspecialchars($linha['filme']) ?></td>
+                            <td><?= htmlspecialchars($linha['diretor']) ?></td>
+                            <td><?= $linha['duracao'] ?></td>
+                            <td><?= htmlspecialchars($linha['imagem']) ?></td>
                             <td class="text-center">
-                                <a href="/lp3_projeto/clientes/editar?id=<?= $linha['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="/lp3_projeto/filmes/editar?id=<?= $linha['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
 
-                                <a href="/lp3_projeto/clientes/excluir?id=<?= $linha['id'] ?>" 
+                                <a href="/lp3_projeto/filmes/excluir?id=<?= $linha['id'] ?>" 
                                    class="btn btn-danger btn-sm" 
                                    onclick="return confirm('Tem certeza que deseja excluir este registro?');">
                                    Excluir

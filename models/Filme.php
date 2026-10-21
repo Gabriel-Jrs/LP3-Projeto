@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/Database.php';
 
-class Cliente 
+class Filme 
 {
     private $db;
     private $tabela = 'filmes';
@@ -17,30 +17,29 @@ class Cliente
         return $stmt->fetchAll();
     }
 
-    public function salvar(string $nomeDoFilme, string $diretor, string $duracaoFilme,  string $imagem) 
+    public function salvar(string $filme, string $diretor, int $duracao, string $imagem) 
     {
-        $sql = "INSERT INTO {$this->tabela} (nomeDoFilme, diretor, duracaoFilme, salario, imagem, data, obs) VALUES (:nomeDoFilme, :diretor, :duracaoFilme, :imagem)";
+        $sql = "INSERT INTO {$this->tabela} (filme, diretor, duracao, imagem) VALUES (:filme, :diretor, :duracao, :imagem)";
         $stmt = $this->db->prepare($sql);
         $values = [
-            ':nomeDoFilme' => $nomeDoFilme,
+            ':filme' => $filme,
             ':diretor' => $diretor,
-            ':duracaoFilme' => $duracaoFilme,
-            ':imagem' => $imagem,
-            
+            ':duracao' => $duracao,
+            ':imagem' => $imagem
         ];
         return $stmt->execute($values);
     }
 
-    public function atualizar(int $id, string $nomeDoFilme, string $diretor, string $duracaoFilme, float $salario, string $imagem, string $data, string $obs) 
+    public function atualizar(int $id, string $filme, string $diretor, int $duracao, string $imagem) 
     {
-        $sql = "UPDATE {$this->tabela} SET nomeDoFilme = :nomeDoFilme, diretor = :diretor, duracaoFilme = :duracaoFilme, imagem = :imagem, WHERE id = :id";
+        $sql = "UPDATE {$this->tabela} SET filme = :filme, diretor = :diretor, duracao = :duracao, imagem = :imagem WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $values = [
-            ':nomeDoFilme' => $nomeDoFilme,
+            ':filme' => $filme,
             ':diretor' => $diretor,
-            ':duracaoFilme' => $duracaoFilme,
+            ':duracao' => $duracao,
             ':imagem' => $imagem,
-            
+            ':id' => $id
         ];
         return $stmt->execute($values);
     }

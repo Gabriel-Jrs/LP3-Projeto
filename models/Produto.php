@@ -13,31 +13,33 @@ class Produto
 
     public function listar() 
     {
-        $stmt = $this->db->query("SELECT * FROM {$this->tabela} ORDER BY id DESC");
+        $stmt = $this->db->query("SELECT * FROM {$this->tabela} ORDER BY id ASC");
         return $stmt->fetchAll();
     }
 
-    public function salvar(string $nomeProduto, float $valor, string $descricao) 
+    public function salvar(string $nomeProduto, float $valor, int $categoria_id, string $descricao) 
     {
-        $sql = "INSERT INTO {$this->tabela} (produto, valor, descricao) VALUES (:produto, :valor, :descricao)";
+        $sql = "INSERT INTO {$this->tabela} (produto, valor, categoria_id, descricao) VALUES (:produto, :valor, :categoria_id, :descricao)";
         $stmt = $this->db->prepare($sql);
         $values = [
             ':produto' => $nomeProduto,
             ':valor' => $valor,
+            ':categoria_id' => $categoria_id,
             ':descricao' => $descricao
         ];
         return $stmt->execute($values);
     }
 
-    public function atualizar(int $id, string $nomeProduto, float $valor, string $descricao) 
+    public function atualizar(int $id, string $nomeProduto, float $valor, int $categoria_id, string $descricao) 
     {
-        $sql = "UPDATE {$this->tabela} SET produto = :produto, valor = :valor, descricao = :descricao WHERE id = :id";
+        $sql = "UPDATE {$this->tabela} SET produto = :produto, valor = :valor, categoria_id = :categoria_id, descricao = :descricao WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $values = [
             ':produto' => $nomeProduto,
             ':valor' => $valor,
+            ':categoria_id' => $categoria_id,
             ':descricao' => $descricao,
-            ':id'        => $id,
+            ':id' => $id
         ];
         return $stmt->execute($values);
     }
