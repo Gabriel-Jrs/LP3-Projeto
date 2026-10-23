@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria:</label>
-                <select name="categoria" id="categoria" required class="form-select" required>
+                <select name="categoria" id="categoria" required class="form-control" required>
                     <option value="">Selecione uma categoria</option>
                     <?php foreach ($categorias as $categoria){ ?>
                         <option value="<?= $categoria['id'] ?>"><?= $categoria['categoria'] ?></option>

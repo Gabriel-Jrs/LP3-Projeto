@@ -17,7 +17,7 @@ class Filme
         return $stmt->fetchAll();
     }
 
-    public function salvar(string $filme, string $diretor, int $duracao, string $imagem) 
+    public function salvar(string $filme, string $diretor, int $duracao, ?string $imagem) 
     {
         $sql = "INSERT INTO {$this->tabela} (filme, diretor, duracao, imagem) VALUES (:filme, :diretor, :duracao, :imagem)";
         $stmt = $this->db->prepare($sql);
@@ -30,7 +30,7 @@ class Filme
         return $stmt->execute($values);
     }
 
-    public function atualizar(int $id, string $filme, string $diretor, int $duracao, string $imagem) 
+    public function atualizar(int $id, string $filme, string $diretor, int $duracao, ?string $imagem) 
     {
         $sql = "UPDATE {$this->tabela} SET filme = :filme, diretor = :diretor, duracao = :duracao, imagem = :imagem WHERE id = :id";
         $stmt = $this->db->prepare($sql);

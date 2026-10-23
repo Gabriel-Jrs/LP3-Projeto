@@ -13,7 +13,7 @@
         <?php endif; ?>
 
         
-        <form action="/lp3_projeto/filmes/adicionar" method="POST" class="card-form">
+        <form action="/lp3_projeto/filmes/adicionar" method="POST" enctype="multipart/form-data" class="card-form">
             <div class="form-group">
                 <label for="filme">Nome do Filme:</label>
                 <input type="text" id="filme" name="filme" required class="form-control" placeholder="Ex: O Poderoso Chefão">
@@ -24,11 +24,11 @@
             </div>
             <div class="form-group">
                 <label for="duracao">Duração (minutos):</label>
-                <input type="number" id="duracao" name="duracao" required class="form-control" placeholder="Ex: 175">
+                <input type="number" id="duracao" name="duracao" class="form-control" placeholder="Ex: 175">
             </div>
             <div class="form-group">
                 <label for="imagem">Imagem:</label>
-                <input type="text" id="imagem" name="imagem" required class="form-control" placeholder="Ex: o-poderoso-chefao.jpg">
+                <input type="file" id="imagem" name="imagem" accept="image/jpeg, image/png, image/gif, image/webp"  class="form-control">
             </div>
             <div class="mt-3 d-flex gap-2">
                 <button type="submit" class="btn btn-success">Salvar</button>

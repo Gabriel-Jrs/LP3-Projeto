@@ -26,9 +26,11 @@
                 <label for="categoria">Categoria:</label>
                 <select name="categoria" id="categoria" required class="form-select" required>
                     <option value="">Selecione uma categoria</option>
-                    <?php foreach ($categorias as $categoria){ ?>
-                        <option value="<?= $categoria['id'] ?>"><?= $categoria['categoria'] ?></option>
-                    <?php } ?>
+                    <?php foreach ($categorias as $categoria): ?>
+                        <option value="<?= $categoria['id'] ?>" <?= $categoria['id'] == $dado['categoria_id'] ? 'selected' : '' ?>>
+                            <?= $categoria['categoria'] ?>
+                        </option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">

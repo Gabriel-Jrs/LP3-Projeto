@@ -28,7 +28,12 @@
                             <td><?= htmlspecialchars($linha['filme']) ?></td>
                             <td><?= htmlspecialchars($linha['diretor']) ?></td>
                             <td><?= $linha['duracao'] ?></td>
-                            <td><?= htmlspecialchars($linha['imagem']) ?></td>
+                            <td>
+                                <?= htmlspecialchars($linha['imagem']) ?>
+                                <?php if (!empty($linha['imagem'])): ?>
+                                    <img src="/lp3_projeto/uploads/filmes/<?= htmlspecialchars($linha['imagem']) ?>" alt="Imagem do Filme" style="max-width: 100px; height: auto;">
+                                <?php endif; ?>
+                            </td>
                             <td class="text-center">
                                 <a href="/lp3_projeto/filmes/editar?id=<?= $linha['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
 

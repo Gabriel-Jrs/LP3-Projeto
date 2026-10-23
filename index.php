@@ -46,6 +46,10 @@ $rotas = [
     '/filmes/adicionar'   => ['controller' => 'FilmeController', 'metodo' => 'adicionar'],
     '/filmes/editar'      => ['controller' => 'FilmeController', 'metodo' => 'editar'],
     '/filmes/excluir'     => ['controller' => 'FilmeController', 'metodo' => 'excluir'],
+    '/generos'             => ['controller' => 'GeneroController', 'metodo' => 'index'],
+    '/generos/criar'   => ['controller' => 'GeneroController', 'metodo' => 'criar'],
+    '/generos/editar'      => ['controller' => 'GeneroController', 'metodo' => 'editar'],
+    '/generos/excluir'     => ['controller' => 'GeneroController', 'metodo' => 'excluir'],
 ];
 
 // Verificação de existência da rota
